@@ -1,14 +1,25 @@
-import { useState } from 'react'
-import NavBar from './NavBar'
+import {Navbar} from "./components/Navbar";
+import {BrowserRouter, Route, Routes} from "@react-router";
+
 
 function App() {
+  const tocar = (e) => {
+    if (e.target.style.backgroundColor === "red") {
+      e.target.style.backgroundColor = "blue";
+    } else {
+      e.target.style.backgroundColor = "red";
+    }
+  };
 
   return (
     <>
-    <NavBar> </NavBar>
-  
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+        </Routes> 
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
