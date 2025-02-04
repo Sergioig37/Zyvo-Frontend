@@ -1,24 +1,25 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import {Navbar} from "./components/Navbar";
+import {BrowserRouter, Route, Routes} from "@react-router";
+
 
 function App() {
-  
   const tocar = (e) => {
-    
-    e.target.style.backgroundColor = 'red'
-
-  }
+    if (e.target.style.backgroundColor === "red") {
+      e.target.style.backgroundColor = "blue";
+    } else {
+      e.target.style.backgroundColor = "red";
+    }
+  };
 
   return (
     <>
-     <h1> 
-        Mi padre es puto Sergio
-     </h1>
-    <button onClick={tocar}> No tocar </button>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Navbar />} />
+        </Routes> 
+      </BrowserRouter>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
