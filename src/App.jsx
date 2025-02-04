@@ -1,23 +1,19 @@
 import {Navbar} from "./components/Navbar";
-import {BrowserRouter, Route, Routes} from "@react-router";
-
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import NavBar from "./NavBar";
+import Home from "./pages/Home";
 
 function App() {
-  const tocar = (e) => {
-    if (e.target.style.backgroundColor === "red") {
-      e.target.style.backgroundColor = "blue";
-    } else {
-      e.target.style.backgroundColor = "red";
-    }
-  };
 
   return (
     <>
+    <NavBar/>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Navbar />} />
+          <Route path="/" element={<Home/>} />
         </Routes> 
       </BrowserRouter>
+      
     </>
   );
 }
